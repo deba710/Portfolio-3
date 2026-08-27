@@ -1,8 +1,11 @@
 import React from 'react';
 import { ArrowUp, Github, Linkedin, Mail, Heart, Code2 } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { usePhotoContext } from '../context/PhotoContext';
 
 export const Footer: React.FC = () => {
+  const { avatarUrl } = usePhotoContext();
+
   const scrollToTop = () => {
     window.scrollTo({
       top: 0,
@@ -45,8 +48,17 @@ export const Footer: React.FC = () => {
           {/* Logo and Tagline */}
           <div className="md:col-span-5 space-y-3">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm font-mono shadow-md shadow-blue-600/30">
-                D
+              <div className="w-8 h-8 rounded-xl bg-blue-600 flex items-center justify-center text-white font-black text-sm font-mono shadow-md shadow-blue-600/30 overflow-hidden">
+                {avatarUrl ? (
+                  <img 
+                    src={avatarUrl} 
+                    alt="Debangan Avatar" 
+                    className="w-full h-full object-cover"
+                    referrerPolicy="no-referrer"
+                  />
+                ) : (
+                  'D'
+                )}
               </div>
               <span className="text-lg font-black text-white uppercase tracking-tight">
                 {portfolioData.personal.name}

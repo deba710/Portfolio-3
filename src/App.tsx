@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { PhotoProvider } from './context/PhotoContext';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { About } from './components/About';
@@ -37,23 +38,25 @@ export default function App() {
   }, []);
 
   return (
-    <div id="portfolio-app-root" className="min-h-screen bg-[#0A0A0A] text-white flex flex-col selection:bg-blue-600/30 selection:text-blue-200">
-      {/* Sticky Top Navigation */}
-      <Navbar activeSection={activeSection} />
+    <PhotoProvider>
+      <div id="portfolio-app-root" className="min-h-screen bg-[#0A0A0A] text-white flex flex-col selection:bg-blue-600/30 selection:text-blue-200">
+        {/* Sticky Top Navigation */}
+        <Navbar activeSection={activeSection} />
 
-      {/* Main Portfolio Sections */}
-      <main id="main-content" className="flex-1">
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Education />
-        <Certificates />
-        <Contact />
-      </main>
+        {/* Main Portfolio Sections */}
+        <main id="main-content" className="flex-1">
+          <Hero />
+          <About />
+          <Skills />
+          <Projects />
+          <Education />
+          <Certificates />
+          <Contact />
+        </main>
 
-      {/* Footer */}
-      <Footer />
-    </div>
+        {/* Footer */}
+        <Footer />
+      </div>
+    </PhotoProvider>
   );
 }

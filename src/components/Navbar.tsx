@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X, Code2, Send, ChevronRight } from 'lucide-react';
+import { Menu, X, Code2, Send, ChevronRight, Camera } from 'lucide-react';
 import { portfolioData } from '../data/portfolioData';
+import { usePhotoContext } from '../context/PhotoContext';
 
 interface NavbarProps {
   activeSection: string;
@@ -9,6 +10,7 @@ interface NavbarProps {
 export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { avatarUrl } = usePhotoContext();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -59,8 +61,17 @@ export const Navbar: React.FC<NavbarProps> = ({ activeSection }) => {
           className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 rounded-lg"
           aria-label="Debangan Portfolio Home"
         >
-          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-lg font-mono shadow-md shadow-blue-600/30 transition-transform duration-300 group-hover:scale-105">
-            D
+          <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-blue-600 text-white font-black text-lg font-mono shadow-md shadow-blue-600/30 transition-transform duration-300 group-hover:scale-105 overflow-hidden">
+            {avatarUrl ? (
+              <img 
+                src={avatarUrl} 
+                alt="Debangan Avatar" 
+                className="w-full h-full object-cover"
+                referrerPolicy="no-referrer"
+              />
+            ) : (
+              'D'
+            )}
           </div>
           <div className="flex flex-col">
             <span className="font-extrabold text-base text-white tracking-tight group-hover:text-blue-400 transition-colors uppercase">

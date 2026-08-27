@@ -5,23 +5,23 @@ export interface SocialLink {
   label: string;
 }
 
-export interface StatItem {
+export interface HonestPillarItem {
   id: string;
-  label: string;
-  value: string;
-  numericValue: number;
-  suffix: string;
+  title: string;
+  subtitle: string;
   description: string;
+  iconName: string;
+  tag: string;
 }
 
 export interface SkillItem {
   name: string;
-  category: 'languages' | 'frontend' | 'tools' | 'core';
-  proficiency: number; // 0 to 100
-  level: string; // e.g. "Proficient", "Intermediate", "Familiar"
+  category: 'core' | 'fundamentals' | 'tools';
+  status: string; // e.g. "Main Focus", "Active Practice", "In Progress"
   iconName: string;
   color: string;
-  description?: string;
+  description: string;
+  topics: string[];
 }
 
 export interface ProjectItem {
@@ -31,10 +31,11 @@ export interface ProjectItem {
   description: string;
   fullDescription?: string;
   technologies: string[];
-  category: 'all' | 'web' | 'java' | 'other';
+  status: 'Completed' | 'Ongoing';
   featured: boolean;
   githubUrl: string;
   liveUrl?: string;
+  imageUrl?: string;
   highlights: string[];
   visualStyle: {
     accentColor: string;
@@ -68,28 +69,51 @@ export interface CertificateItem {
   iconColor: string;
 }
 
+export type PhotoFilterId = 'normal' | 'noir' | 'cyber' | 'warm' | 'cool' | 'contrast';
+
+export interface PhotoFilter {
+  id: PhotoFilterId;
+  name: string;
+  cssFilter: string;
+}
+
+export interface GalleryPhoto {
+  id: string;
+  title: string;
+  category: 'avatar' | 'workspace' | 'projects' | 'general';
+  url: string;
+  dateAdded: string;
+  size?: string;
+  filter?: PhotoFilterId;
+  isAvatar?: boolean;
+}
+
 export interface PortfolioData {
   personal: {
     name: string;
+    taglineLabel: string;
     greeting: string;
     role: string;
     headline: string;
     location: string;
     availabilityStatus: string;
+    heroPhotoUrl: string;
+    aboutPhotoUrl: string;
     aboutBio: string[];
     email: string;
     github: string;
     linkedin: string;
     resumeUrl: string;
   };
-  interests: {
-    name: string;
+  learningValues: {
+    title: string;
     icon: string;
     description: string;
   }[];
-  stats: StatItem[];
+  honestPillars: HonestPillarItem[];
   skills: SkillItem[];
   projects: ProjectItem[];
   education: EducationItem[];
   certificates: CertificateItem[];
 }
+

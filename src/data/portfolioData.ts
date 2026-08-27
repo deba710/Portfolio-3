@@ -3,326 +3,280 @@ import { PortfolioData } from '../types/portfolio';
 /**
  * PORTFOLIO DATA CONFIGURATION
  * 
- * You can easily edit all your personal information, projects, skills, 
- * education, certificates, and contact links right here in this single file!
+ * Easily edit all your personal information, projects, skills, 
+ * education, and contact links right here in this single file!
  */
 export const portfolioData: PortfolioData = {
   personal: {
     name: "Debangan",
-    greeting: "Hi, I'm Debangan",
-    role: "Student / Aspiring Software Developer",
-    headline: "Aspiring Developer & Creative Problem Solver",
+    taglineLabel: "STUDENT • BEGINNER PROGRAMMER",
+    greeting: "Hi, I'm Debangan.",
+    role: "Student • Beginner Programmer • Aspiring Developer",
+    headline: "Learning. Building. Becoming a Developer.",
     location: "West Bengal, India",
-    availabilityStatus: "Open for Opportunities & Collaborations",
+    availabilityStatus: "Learning & Open to Collaborate",
+    heroPhotoUrl: "/images/debangan-1.jpg",
+    aboutPhotoUrl: "/images/debangan-2.jpg",
+    aboutBio: [
+      "I am a student who is currently learning programming and exploring software development.",
+      "I enjoy building small projects, learning new concepts and improving my coding skills step by step.",
+      "I am at the beginning of my developer journey and want the portfolio to show growth, curiosity and real work rather than pretending to be an experienced professional."
+    ],
     email: "debangan2007@gmail.com",
     github: "https://github.com/debangan-dev",
     linkedin: "https://linkedin.com/in/debangan-dev",
-    resumeUrl: "#contact", // Can be linked to a PDF resume
-    aboutBio: [
-      "I am a passionate student deeply interested in programming, web development, and modern technology.",
-      "I enjoy learning new technologies, building hands-on projects, and continuously improving my coding and problem-solving skills.",
-      "With a strong foundation in Java, modern JavaScript, and React, I love translating creative ideas into responsive, accessible, and high-performance digital experiences."
-    ],
+    resumeUrl: "#contact",
   },
 
-  interests: [
+  learningValues: [
     {
-      name: "Java",
-      icon: "Coffee",
-      description: "Object-oriented programming, data structures, and backend concepts."
-    },
-    {
-      name: "Web Development",
-      icon: "Globe",
-      description: "Creating modern, responsive, and intuitive web applications."
-    },
-    {
-      name: "Programming",
+      title: "Core Fundamentals",
       icon: "Code2",
-      description: "Algorithmic thinking, problem-solving, and clean code architecture."
+      description: "Mastering the foundational principles of programming, logical thinking, and clean syntax."
     },
     {
-      name: "UI Design",
-      icon: "Palette",
-      description: "Designing sleek interfaces, typography pairings, and micro-interactions."
+      title: "Java & OOP",
+      icon: "Coffee",
+      description: "Building strong object-oriented programming concepts, classes, and algorithmic problem solving."
     },
     {
-      name: "Technology",
-      icon: "Cpu",
-      description: "Exploring software ecosystems, developer tooling, and modern tech trends."
-    },
-    {
-      name: "Learning New Tech",
+      title: "Step-by-Step Practice",
       icon: "Sparkles",
-      description: "Continuously adopting new frameworks, libraries, and best practices."
+      description: "Writing code daily, testing small ideas, and turning theoretical knowledge into real working programs."
+    },
+    {
+      title: "Version Control",
+      icon: "GitBranch",
+      description: "Learning Git and GitHub workflows to maintain code history and track learning progress."
     }
   ],
 
-  stats: [
+  honestPillars: [
     {
-      id: "projects",
-      label: "Projects & Builds",
-      value: "15+",
-      numericValue: 15,
-      suffix: "+",
-      description: "Hands-on projects completed & deployed"
+      id: "projects-count",
+      title: "2+ Completed Projects",
+      subtitle: "Hands-on Builds",
+      description: "Small, authentic projects built from scratch to practice coding concepts.",
+      iconName: "FolderGit2",
+      tag: "Real Work"
     },
     {
-      id: "technologies",
-      label: "Technologies",
-      value: "8+",
-      numericValue: 8,
-      suffix: "+",
-      description: "Languages, libraries & core developer tools"
+      id: "main-language",
+      title: "1 Main Language (Java)",
+      subtitle: "Core Focus",
+      description: "Dedicated to mastering Java fundamentals and object-oriented programming.",
+      iconName: "Coffee",
+      tag: "Focus"
     },
     {
-      id: "learning",
-      label: "Learning & Practice",
-      value: "500+",
-      numericValue: 500,
-      suffix: "+ hrs",
-      description: "Dedicated hours of coding & study"
+      id: "learning-mindset",
+      title: "Always Learning",
+      subtitle: "Growth Mindset",
+      description: "Constantly learning new concepts and improving coding skills every day.",
+      iconName: "BookOpen",
+      tag: "Dedication"
     },
     {
-      id: "dedication",
-      label: "Commitment",
-      value: "100%",
-      numericValue: 100,
-      suffix: "%",
-      description: "Passion for learning & writing clean code"
+      id: "journey-stage",
+      title: "Curiosity Driven",
+      subtitle: "Aspiring Developer",
+      description: "Exploring the software world with passion, discipline, and honest curiosity.",
+      iconName: "Sparkles",
+      tag: "Journey"
     }
   ],
 
   skills: [
     {
       name: "Java",
-      category: "languages",
-      proficiency: 82,
-      level: "Intermediate",
+      category: "core",
+      status: "Main Focus",
       iconName: "Coffee",
       color: "#f59e0b",
-      description: "Core Java, OOP principles, collections framework, and algorithmic problem solving."
+      description: "Core Java programming, Object-Oriented concepts (OOP), classes, objects, and modular methods.",
+      topics: [
+        "Object-Oriented Programming (OOP)",
+        "Classes, Objects & Methods",
+        "Control Flow (If-Else & Loops)",
+        "Basic Data Structures & Arrays",
+        "Exception Handling Basics",
+        "Input / Output & Console UI"
+      ]
     },
     {
-      name: "JavaScript (ES6+)",
-      category: "languages",
-      proficiency: 85,
-      level: "Proficient",
-      iconName: "FileCode",
-      color: "#eab308",
-      description: "Modern JavaScript, asynchronous programming, DOM manipulation, and ES modules."
-    },
-    {
-      name: "React",
-      category: "frontend",
-      proficiency: 80,
-      level: "Intermediate",
-      iconName: "Atom",
-      color: "#06b6d4",
-      description: "Functional components, custom hooks, state management, and modern component architecture."
-    },
-    {
-      name: "HTML5",
-      category: "frontend",
-      proficiency: 92,
-      level: "Advanced",
-      iconName: "FileCode2",
-      color: "#f97316",
-      description: "Semantic markup, web accessibility (a11y), SEO optimization, and clean page structuring."
-    },
-    {
-      name: "CSS3",
-      category: "frontend",
-      proficiency: 88,
-      level: "Advanced",
-      iconName: "Layout",
+      name: "Programming Fundamentals",
+      category: "fundamentals",
+      status: "Foundational",
+      iconName: "Terminal",
       color: "#3b82f6",
-      description: "Flexbox, CSS Grid, custom properties, animations, and modern responsive layouts."
+      description: "Core computer science fundamentals, algorithm logic, step-by-step problem decomposition, and dry runs.",
+      topics: [
+        "Variables & Data Types",
+        "Conditional Logic & Branching",
+        "Loops & Iterative Logic",
+        "Modular Functions & Scope",
+        "Code Tracing & Debugging",
+        "Clean Variable Naming"
+      ]
     },
     {
-      name: "Responsive Web Design",
-      category: "frontend",
-      proficiency: 90,
-      level: "Advanced",
-      iconName: "Smartphone",
+      name: "Problem Solving",
+      category: "fundamentals",
+      status: "Active Practice",
+      iconName: "BrainCircuit",
       color: "#10b981",
-      description: "Mobile-first layouts, fluid media queries, touch-friendly UI, and cross-browser support."
+      description: "Solving logical coding questions, array manipulations, pattern problems, and mathematical algorithms.",
+      topics: [
+        "Array Traversals & Searches",
+        "Number & Math Logic Puzzles",
+        "Pattern Printing Programs",
+        "String Manipulation Basics",
+        "Algorithm Optimization Practice"
+      ]
     },
     {
-      name: "Git",
+      name: "Git & GitHub",
       category: "tools",
-      proficiency: 78,
-      level: "Intermediate",
+      status: "Version Control",
       iconName: "GitBranch",
-      color: "#ef4444",
-      description: "Version control, branching workflows, commits, merging, and repository management."
-    },
-    {
-      name: "GitHub",
-      category: "tools",
-      proficiency: 82,
-      level: "Intermediate",
-      iconName: "Github",
       color: "#8b5cf6",
-      description: "Remote code hosting, pull requests, collaboration, GitHub Pages, and issue tracking."
+      description: "Using Git for local version control and GitHub for storing repositories, tracking commits, and sharing code.",
+      topics: [
+        "git init, add & commit",
+        "git push & pull",
+        "GitHub Repositories",
+        "Commit History Tracking",
+        "README & Documentation"
+      ]
     }
   ],
 
   projects: [
     {
-      id: "personal-portfolio",
-      title: "Personal Portfolio Website",
-      subtitle: "Flagship Developer Portfolio",
-      description: "A modern, high-performance responsive personal portfolio website built to showcase projects, skills, education, and credentials with smooth animations and dark aesthetics.",
-      fullDescription: "A crafted personal developer portfolio engineered with React, TypeScript, and modern styling. Features interactive project showcases, skill radar bars, responsive navigation, contact utilities with clipboard integration, and accessible dark theme styling.",
-      technologies: ["React", "TypeScript", "Tailwind CSS", "JavaScript", "HTML5", "CSS3"],
-      category: "web",
+      id: "project-1",
+      title: "[PROJECT 1 NAME]",
+      subtitle: "Java Application",
+      description: "[PROJECT 1 DESCRIPTION] — A completed core Java project built to practice object-oriented programming, class structure, and logic.",
+      fullDescription: "A completed Java application developed as part of hands-on programming practice. Demonstrates object-oriented programming principles, modular code organization, and user interaction handling. Easily replace this description with your actual project details.",
+      technologies: ["Java"],
+      status: "Completed",
       featured: true,
-      githubUrl: "https://github.com/debangan-dev/portfolio-website",
-      liveUrl: "#",
+      githubUrl: "https://github.com/debangan-dev/[project-1-repo]",
+      liveUrl: undefined,
+      imageUrl: "/images/debangan-1.jpg",
       highlights: [
-        "Fully responsive layout across mobile, tablet, and ultra-wide screens",
-        "Dark developer theme with subtle ambient glowing effects",
-        "Single configuration file for effortless updates and maintenance",
-        "Smooth section transitions and accessible keyboard navigation"
-      ],
-      visualStyle: {
-        accentColor: "cyan",
-        gradient: "from-cyan-500/20 via-blue-600/10 to-transparent",
-        tagline: "React + TypeScript + Tailwind",
-        codeSnippet: `// Debangan's Portfolio
-export const developer = {
-  name: "Debangan",
-  focus: ["Java", "React", "Web Dev"],
-  status: "Ready to build impactful projects"
-};`
-      }
-    },
-    {
-      id: "java-projects",
-      title: "Java Projects & Algorithms",
-      subtitle: "Core Programming & Data Structures",
-      description: "A curated collection of Java programming projects and utility applications created while mastering object-oriented design and algorithm fundamentals.",
-      fullDescription: "A collection of practical Java applications and algorithmic exercises. Includes console-based management systems, object-oriented simulations, data structure implementations, and mathematical problem-solving modules.",
-      technologies: ["Java", "OOP", "Data Structures", "Algorithms"],
-      category: "java",
-      featured: true,
-      githubUrl: "https://github.com/debangan-dev/java-projects-collection",
-      liveUrl: "https://github.com/debangan-dev/java-projects-collection",
-      highlights: [
-        "Object-Oriented Programming (Encapsulation, Inheritance, Polymorphism)",
-        "Collections framework implementations (Lists, Sets, Maps)",
-        "Console UI utilities with robust exception handling and input validation",
-        "Well-documented code structure with modular classes"
+        "Built using Core Java with Object-Oriented design principles",
+        "Features structured modular methods and user input validation",
+        "Console interface with clear error handling and menus",
+        "Fully editable placeholder ready for your real project details"
       ],
       visualStyle: {
         accentColor: "amber",
         gradient: "from-amber-500/20 via-orange-600/10 to-transparent",
-        tagline: "Java OOP & Problem Solving",
-        codeSnippet: `public class Main {
+        tagline: "Core Java • Object-Oriented Design",
+        codeSnippet: `// Project 1: Java Application
+public class ProjectOne {
     public static void main(String[] args) {
-        System.out.println("Hello, World!");
-        Developer debangan = new Developer("Java");
-        debangan.solveProblems();
+        System.out.println("Running [PROJECT 1 NAME]...");
+        // Core application logic
     }
 }`
       }
     },
     {
-      id: "web-projects",
-      title: "Creative Web Projects Suite",
-      subtitle: "Interactive Frontend Experiments",
-      description: "Experimental and creative web development projects showcasing interactive DOM manipulation, responsive UI components, and utility web tools.",
-      fullDescription: "A dynamic showcase of creative web mini-applications including interactive calculators, task management tools, dynamic landing pages, and interactive CSS experiment canvases built with HTML, CSS, and modern JavaScript.",
-      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design", "DOM API"],
-      category: "web",
+      id: "project-2",
+      title: "[PROJECT 2 NAME]",
+      subtitle: "Java Problem Solving & Utilities",
+      description: "[PROJECT 2 DESCRIPTION] — A completed Java program focusing on algorithms, conditional flow, and data management.",
+      fullDescription: "A completed Java utility program created to strengthen algorithmic problem-solving skills, array manipulation, and step-by-step logic. Easily replace this description with your actual project details.",
+      technologies: ["Java"],
+      status: "Completed",
       featured: true,
-      githubUrl: "https://github.com/debangan-dev/web-experiments",
-      liveUrl: "#",
+      githubUrl: "https://github.com/debangan-dev/[project-2-repo]",
+      liveUrl: undefined,
+      imageUrl: "/images/debangan-2.jpg",
       highlights: [
-        "Clean, semantic HTML markup and modern CSS styling",
-        "Pure JavaScript DOM manipulation and event-driven interactivity",
-        "Responsive design supporting fluid screen sizes",
-        "Lightweight, dependency-free performant client-side scripts"
+        "Implemented algorithm logic and iterative calculations in Java",
+        "Structured data management with arrays and conditional branching",
+        "Focused on readable code, descriptive names, and comments",
+        "Fully editable placeholder ready for your real project details"
+      ],
+      visualStyle: {
+        accentColor: "blue",
+        gradient: "from-blue-500/20 via-indigo-600/10 to-transparent",
+        tagline: "Core Java • Algorithms & Logic",
+        codeSnippet: `// Project 2: Algorithm & Utility
+public class ProjectTwo {
+    public static void processData() {
+        // Problem solving and calculation logic
+    }
+}`
+      }
+    },
+    {
+      id: "project-3",
+      title: "[PROJECT 3 NAME]",
+      subtitle: "Practice & Exploration Project",
+      description: "[PROJECT 3 DESCRIPTION] — An optional Java project currently in progress or recently completed to practice new concepts.",
+      fullDescription: "An ongoing or completed Java project exploring new programming concepts, data structure practice, or utility features. Easily replace this description with your actual project details.",
+      technologies: ["Java"],
+      status: "Ongoing",
+      featured: true,
+      githubUrl: "https://github.com/debangan-dev/[project-3-repo]",
+      liveUrl: undefined,
+      highlights: [
+        "Hands-on experimentation with new Java language features",
+        "Step-by-step development and continuous code improvements",
+        "Clean documentation and version-controlled on GitHub",
+        "Optional project slot for your third project"
       ],
       visualStyle: {
         accentColor: "emerald",
         gradient: "from-emerald-500/20 via-teal-600/10 to-transparent",
-        tagline: "Interactive HTML / CSS / JS",
-        codeSnippet: `const interactiveApp = {
-  init() {
-    this.bindEvents();
-    this.renderUI();
-  }
-};`
+        tagline: "Java • Active Learning & Practice",
+        codeSnippet: `// Project 3: Practice & Exploration
+public class ProjectThree {
+    // Continuous learning in progress
+}`
       }
     }
   ],
 
   education: [
     {
-      id: "undergraduate",
-      degree: "Bachelor of Technology / Computer Science & Engineering",
-      field: "Computer Science / Information Technology",
-      institution: "College / University (Placeholder - Editable)",
+      id: "edu-1",
+      degree: "[Course / Stream]",
+      field: "[Field of Study / Computer Science]",
+      institution: "[School / College Name]",
       location: "West Bengal, India",
-      period: "2024 — Present",
+      period: "[Year / e.g. 2024 — Present]",
       status: "In Progress",
-      grade: "Academic Excellence",
       highlights: [
-        "Focus on Core Computer Science: Programming in Java, Data Structures, and Algorithms",
-        "Hands-on coursework in Web Technologies, Software Engineering, and Database Concepts",
-        "Active member of student coding communities and tech exploration groups"
+        "[Additional Details: Learning Programming in Java and Computer Fundamentals]",
+        "[Additional Details: Practicing problem solving and analytical thinking]",
+        "[Additional Details: Easily edit this section with your school/college info]"
       ]
     },
     {
-      id: "higher-secondary",
-      degree: "Higher Secondary Education (10+2)",
-      field: "Science Stream (Physics, Chemistry, Mathematics & Computer Science)",
-      institution: "Higher Secondary School (Placeholder - Editable)",
+      id: "edu-2",
+      degree: "[Previous School / Course Name]",
+      field: "[Stream / Subject Group]",
+      institution: "[School / Institution Name]",
       location: "West Bengal, India",
-      period: "Completed",
+      period: "[Year / e.g. Completed]",
       status: "Completed",
       highlights: [
-        "Strong foundation in Mathematics, Analytical Reasoning, and Science",
-        "Initiated programming journey with fundamental problem solving and basic algorithms"
+        "[Additional Details: Foundational academic milestones]",
+        "[Additional Details: Mathematics, science, and analytical reasoning]",
+        "[Additional Details: Easily edit this section with your school info]"
       ]
     }
   ],
 
   certificates: [
-    {
-      id: "cert-java",
-      title: "Java Programming Fundamentals",
-      issuer: "Online Learning Platform / Academic Institution",
-      issueDate: "2024",
-      credentialId: "JAVA-DEV-2024-01",
-      credentialUrl: "#",
-      skills: ["Java", "OOP", "Data Structures", "Exception Handling"],
-      status: "Verified Credential",
-      iconColor: "#f59e0b"
-    },
-    {
-      id: "cert-web-dev",
-      title: "Modern Frontend Web Development",
-      issuer: "Web Development Course / Academy",
-      issueDate: "2024",
-      credentialId: "WEB-DEV-2024-02",
-      credentialUrl: "#",
-      skills: ["HTML5", "CSS3", "JavaScript", "React", "Responsive Design"],
-      status: "Verified Credential",
-      iconColor: "#06b6d4"
-    },
-    {
-      id: "cert-git-github",
-      title: "Version Control with Git & GitHub",
-      issuer: "Developer Training / Open Source Academy",
-      issueDate: "2024",
-      credentialId: "GIT-VCS-2024-03",
-      credentialUrl: "#",
-      skills: ["Git", "GitHub", "Branching", "Collaborative Workflows"],
-      status: "Verified Credential",
-      iconColor: "#8b5cf6"
-    }
+    // Leave empty or add verified certificates when completed.
+    // The Certificates component will display an honest notice:
+    // "Certificates will be added as I continue learning."
   ]
 };
+
