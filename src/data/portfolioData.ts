@@ -16,7 +16,7 @@ export const portfolioData: PortfolioData = {
     location: "West Bengal, India",
     availabilityStatus: "Learning & Open to Collaborate",
     heroPhotoUrl: "/images/debangan-1.jpg",
-    aboutPhotoUrl: "/images/debangan-2.jpg",
+    aboutPhotoUrl: "/images/debangan-1.jpg",
     aboutBio: [
       "I am a student who is currently learning programming and exploring software development.",
       "I enjoy building small projects, learning new concepts and improving my coding skills step by step.",

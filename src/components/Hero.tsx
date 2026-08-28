@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { 
   ArrowRight, 
   MapPin, 
@@ -11,8 +11,6 @@ import {
   GitBranch, 
   BrainCircuit, 
   User, 
-  Upload,
-  Camera,
   Github, 
   Linkedin, 
   Mail, 
@@ -25,28 +23,10 @@ import { usePhotoContext } from '../context/PhotoContext';
 export const Hero: React.FC = () => {
   const [copiedCode, setCopiedCode] = useState(false);
   const [activeTab, setActiveTab] = useState<'photo' | 'java' | 'journey'>('photo');
-  const { avatarUrl, setAvatarUrl } = usePhotoContext();
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const { avatarUrl } = usePhotoContext();
 
-  // Primary photo source: uploaded avatar > local placeholder
+  // Primary photo source: uploaded/stored avatar or local public image
   const heroPhotoSrc = avatarUrl || portfolioData.personal.heroPhotoUrl;
-
-  const handlePhotoSelect = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = (event) => {
-        if (event.target?.result) {
-          setAvatarUrl(event.target.result as string);
-        }
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const triggerUpload = () => {
-    fileInputRef.current?.click();
-  };
 
   const codeSnippets = {
     java: `// Student Developer Profile
@@ -116,17 +96,15 @@ public class DeveloperJourney {
             {/* Top Row: Debangan Avatar + Status Badges */}
             <div className="flex flex-wrap items-center gap-3">
               {/* Photo Avatar Badge at First */}
-              <button
-                type="button"
-                onClick={triggerUpload}
-                className="inline-flex items-center gap-2.5 p-1 pr-3.5 rounded-full bg-[#141414] hover:bg-[#1a1a1a] border border-neutral-800 hover:border-neutral-700 shadow-md transition-all group/badge"
-                title="Click to select or change photo"
+              <div 
+                id="hero-avatar-badge"
+                className="inline-flex items-center gap-2.5 p-1 pr-3.5 rounded-full bg-[#141414] border border-neutral-800 shadow-md"
               >
                 <div className="w-8 h-8 rounded-full overflow-hidden bg-blue-600 flex items-center justify-center text-white font-bold text-xs border border-blue-400/40 relative">
                   <img 
                     src={heroPhotoSrc} 
                     alt="Debangan Thumbnail" 
-                    className="w-full h-full object-cover group-hover/badge:scale-110 transition-transform"
+                    className="w-full h-full object-cover"
                     referrerPolicy="no-referrer"
                     onError={(e) => {
                       const target = e.currentTarget;
@@ -135,10 +113,10 @@ public class DeveloperJourney {
                   />
                   <span className="font-mono">D</span>
                 </div>
-                <span className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-200 group-hover/badge:text-white">
+                <span className="text-xs font-bold font-mono uppercase tracking-wider text-neutral-200">
                   Debangan
                 </span>
-              </button>
+              </div>
 
               <div 
                 id="hero-tagline-badge"
@@ -328,27 +306,12 @@ public class DeveloperJourney {
                     )}
                   </button>
                 ) : (
-                  <button
-                    type="button"
-                    onClick={triggerUpload}
-                    className="text-[11px] font-mono text-blue-400 hover:text-white bg-blue-950/40 hover:bg-blue-900/60 border border-blue-500/30 px-2.5 py-1 rounded-lg font-bold uppercase tracking-wider flex items-center gap-1.5 transition-colors"
-                    title="Select personal photo"
-                  >
-                    <Upload className="w-3 h-3" />
-                    <span>Upload Photo</span>
-                  </button>
+                  <span className="text-[11px] font-mono text-blue-400 bg-blue-950/40 border border-blue-500/20 px-2.5 py-1 rounded-lg font-bold uppercase tracking-wider flex items-center gap-1.5">
+                    <User className="w-3 h-3 text-blue-400" />
+                    <span>Portrait Photo</span>
+                  </span>
                 )}
               </div>
-
-              {/* Hidden File Input */}
-              <input
-                ref={fileInputRef}
-                type="file"
-                accept="image/*"
-                onChange={handlePhotoSelect}
-                className="hidden"
-                aria-label="Upload personal photo"
-              />
 
               {/* Tabs */}
               <div className="flex items-center px-4 pt-2 gap-1.5 bg-[#0D0D0D]/60 border-b border-neutral-800 overflow-x-auto text-xs font-mono">
@@ -392,11 +355,7 @@ public class DeveloperJourney {
                 <div className="p-6 flex flex-col items-center justify-center bg-[#121212] min-h-[300px]">
                   
                   {/* Photo Frame with Subtle Border, Glow & Hover Transition */}
-                  <div 
-                    onClick={triggerUpload}
-                    className="relative group/frame cursor-pointer"
-                    title="Click to select or change photo"
-                  >
+                  <div className="relative group/frame">
                     <div className="absolute -inset-1 rounded-3xl bg-gradient-to-r from-blue-600 to-amber-500 opacity-30 blur-lg group-hover/frame:opacity-60 transition duration-500"></div>
                     
                     <div className="relative w-48 h-48 sm:w-56 sm:h-56 rounded-2xl bg-neutral-900 border-2 border-neutral-700/80 overflow-hidden shadow-2xl flex items-center justify-center">
@@ -421,12 +380,6 @@ public class DeveloperJourney {
                           }
                         }}
                       />
-                      
-                      {/* Hover Overlay Hint */}
-                      <div className="absolute inset-0 bg-black/50 opacity-0 group-hover/frame:opacity-100 transition-opacity flex flex-col items-center justify-center text-white text-xs font-mono font-bold gap-1.5 p-2 text-center backdrop-blur-[2px]">
-                        <Camera className="w-5 h-5 text-blue-400" />
-                        <span>Change Photo</span>
-                      </div>
                     </div>
                   </div>
 
